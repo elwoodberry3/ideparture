@@ -1,0 +1,2 @@
+# ENVIRONMENTS | iDeparture 
+Environment-specific configurations, such as development or production API URLs. The Angular CLI automatically swaps the appropriate environment file during the build process.

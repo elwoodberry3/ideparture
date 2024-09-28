@@ -1,0 +1,2 @@
+# CORE | iDeparture  
+This folder contains services, guards, interceptors, and other global utilities that are used across the entire application. These are typically singleton services that are provided in the root injector.
