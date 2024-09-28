@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+iDEPARTURE
+*/
+@font-face {
+    font-family: 'Futura';
+    src: url('./app/assets/fonts/futura-medium-bt.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Set default fonts globally */
+body {
+    @apply font-futura; /* Sets Futura as the default font */
+}
+  
+  /* Use Roboto in specific cases */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-roboto;
+  }
