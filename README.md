@@ -1,5 +1,7 @@
-<img src="./_assets/png/original.png" alt="iDeparture | Design System v.3.0.1" width="450"/>  
+<img src="./_assets/png/original.png" alt="iDeparture | Design System v.3.0.1" width="450"/>   
   
+![NPM Version](https://img.shields.io/npm/v/npm)  
+
 iDeparture is the Design System that powers the [iDeparture](#) IOS utility application for frequent travelers.  
   
 ## Links  
