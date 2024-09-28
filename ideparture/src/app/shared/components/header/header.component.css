@@ -1,0 +1,7 @@
+/* header.component.scss */
+
+/* Example: Custom styling for logo hover */
+a:hover {
+    text-decoration: underline;
+  }
+  
