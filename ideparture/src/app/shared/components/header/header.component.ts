@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';  // Import RouterModule if you u
   standalone: true,  // Marks it as standalone
   imports: [CommonModule, RouterModule],  // Import any necessary Angular modules here
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   isMenuOpen = false;

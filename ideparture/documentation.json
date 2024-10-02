@@ -1,0 +1,629 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-47e73c30c2622b355c186b716884f87e0d003357a4d7277ff9833a384bca0127d2349de843c6e1bea48337c8e8de3f8e22b90f6a0d2fbe809b72bf595569781b",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "showBanner",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "FooterComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BannerComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { HeaderComponent } from './shared/components/header/header.component';\nimport { FooterComponent } from './shared/components/footer/footer.component';\nimport { BannerComponent } from './shared/components/banner-careers/banner-careers.component';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    RouterModule,\n    HeaderComponent,\n    FooterComponent,\n    BannerComponent\n  ],\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  showBanner: boolean = true; // Set this flag to true or false based on your requirements\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- app.component.html -->\n<app-banner [showBanner]=\"showBanner\"></app-banner>\n<app-header></app-header>\n<router-outlet></router-outlet>\n<app-footer></app-footer>"
+        },
+        {
+            "name": "BannerComponent",
+            "id": "component-BannerComponent-6179d1af44f487da1a9e66faa77e93b87a6081b35eaa36f4679edd09d55b0c810343507ab110dde4cf5adc3140dd34eb153fe92240c5206fba017bdb101d8424",
+            "file": "src/app/shared/components/banner-careers/banner-careers.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-banner",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./banner-careers.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "showBanner",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isVisible",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onScroll",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:scroll', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "toggleBanner",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "window:scroll",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19
+                }
+            ],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, HostListener } from '@angular/core';\nimport { CommonModule } from '@angular/common'; // Import CommonModule\n\n@Component({\n  selector: 'app-banner',\n  standalone: true,\n  templateUrl: './banner-careers.component.html',\n  imports: [CommonModule], // Add CommonModule here\n})\nexport class BannerComponent {\n  @Input() showBanner: boolean = false;\n  isVisible: boolean = true;\n\n  @HostListener('window:scroll', ['$event'])\n  onScroll() {\n    this.isVisible = false;\n  }\n\n  toggleBanner() {\n    this.isVisible = !this.isVisible;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- src/app/shared/components/banner.component.html -->\n<div *ngIf=\"showBanner && isVisible\" class=\"bg-[#1B2E40] text-[#FFFFFF] p-4 fixed top-0 left-0 w-full z-50 transition-transform transform duration-300\">\n    <div class=\"container mx-auto flex justify-between items-center\">\n      <p class=\"text-sm\">\n        We are hiring! Join iDeparture and help shape the future of urban mobility\n      </p>\n      <a href=\"#\" class=\"text-[#F5B753] hover:underline text-sm ml-4\">View Our Open Positions</a>\n    </div>\n  </div>\n  "
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-ca946078e41540fd76a4e6170eb27c9421e7e274029c5a7a9453545aa82edc70a01a8642e33debf3b3648be415f25c4fe5832f1d1e034ad2cb819755f9514284",
+            "file": "src/app/ui-library/atoms/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                },
+                {
+                    "name": "styleType",
+                    "defaultValue": "'text-only'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "\"text-only\" | \"text-icon\" | \"filled\" | \"outline\"",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "buttonClick",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css'\n})\n\nexport class ButtonComponent {\n  @Output() buttonClick = new EventEmitter<void>();\n\n  @Input() text: string = '';\n  @Input() icon: string | null = null; // Optional icon name\n  @Input() styleType: 'text-only' | 'text-icon' | 'filled' | 'outline' = 'text-only';\n  @Input() backgroundColor?: string; // Example declaration\n  @Input() size?: 'small' | 'large'; // Example declaration\n}\n",
+            "styleUrl": "./button.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>button works!</p>\n"
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-7d2e5e69512a0634b7e027ce1fbd7a7f7973dd2e20be74142ff11b6f608d278910319010e8b369766a6ec2807cb7847cd729180c4e3973552ae6bd4253548e08",
+            "file": "src/app/shared/components/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  standalone: true,\n  imports: [],\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.css'\n})\nexport class FooterComponent {\n\n}\n",
+            "styleUrl": "./footer.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- src/app/footer.component.html -->\n<footer class=\"bg-[#1B2E40] text-[#F0F0F0] py-8\">\n  \n  <div class=\"container mx-auto px-4\">\n    <div class=\"grid grid-cols-1 md:grid-cols-5 gap-8\">\n      <div>\n        <h3 class=\"text-[#F5B753] font-semibold text-lg\">About iDeparture</h3>\n        <ul class=\"mt-4\">\n          <li><a href=\"#\" class=\"hover:underline\">Who We Are</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Careers</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Newsroom</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Investor Relations</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Legal</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Contract of Carriage</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Privacy Notice</a></li>\n        </ul>\n      </div>\n      <div>\n        <h3 class=\"text-[#F5B753] font-semibold text-lg\">Customer Service</h3>\n        <ul class=\"mt-4\">\n          <li><a href=\"#\" class=\"hover:underline\">Help Center</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Feedback & Complaints</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Travel Advisories</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Customer Service Commitment</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Canada - iDeparture Travel Rights</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Tarmac Delay Plan</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Site Map</a></li>\n        </ul>\n      </div>\n      <div>\n        <h3 class=\"text-[#F5B753] font-semibold text-lg\">Products & Services</h3>\n        <ul class=\"mt-4\">\n          <li><a href=\"#\" class=\"hover:underline\">Optional Services & Fees</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Corporate Travel</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">EasyBiz</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Travel Agents</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Cargo</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Gift Certificates</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Travel Insurance</a></li>\n        </ul>\n      </div>\n      <div>\n        <h3 class=\"text-[#F5B753] font-semibold text-lg\">Email Deals</h3>\n        <ul class=\"mt-4\">\n          <li><a href=\"#\" class=\"hover:underline\">Sign Up Now</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Give Feedback</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Get The App</a></li>\n        </ul>\n      </div>\n      <div>\n        <h3 class=\"text-[#F5B753] font-semibold text-lg\">Follow Us</h3>\n        <ul class=\"mt-4\">\n          <li><a href=\"#\" class=\"hover:underline\">Facebook</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Twitter</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Instagram</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">YouTube</a></li>\n          <li><a href=\"#\" class=\"hover:underline\">Shop Our Company Store</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"container mx-auto px-4 py-16\">\n    <h3 class=\"text-[#F5B753] font-semibold text-lg\">About iDeparture</h3>\n    <ul class=\"mt-4\">\n      <li><a href=\"#\" class=\"hover:underline\">Who We Are</a></li>\n      <li><a href=\"#\" class=\"hover:underline\">Careers</a></li>\n      <li><a href=\"#\" class=\"hover:underline\">Newsroom</a></li>\n      <li><a href=\"#\" class=\"hover:underline\">Investor Relations</a></li>\n      <li><a href=\"#\" class=\"hover:underline\">Legal</a></li>\n      <li><a href=\"#\" class=\"hover:underline\">Contract of Carriage</a></li>\n      <li><a href=\"#\" class=\"hover:underline\">Privacy Notice</a></li>\n    </ul>\n  </div>\n\n  <div class=\"container mx-auto px-4 py-16\">\n    &#169; 2024 iDeparture, LLC. All rights reserved. \n  </div>\n  </footer>\n  "
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-d84bd815afc880736bc11994e451bd0ec4356a105860c522b1c5700b4f272ca0e54c3402ea0f4c3da2977259ca28dadd26c00d0ce0c6d404f5ca51fae9448fc9",
+            "file": "src/app/shared/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isMenuOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "toggleMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';  // Import common utilities\nimport { RouterModule } from '@angular/router';  // Import RouterModule if you use routing links\n\n@Component({\n  selector: 'app-header',\n  standalone: true,  // Marks it as standalone\n  imports: [CommonModule, RouterModule],  // Import any necessary Angular modules here\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent {\n  isMenuOpen = false;\n\n  toggleMenu() {\n    this.isMenuOpen = !this.isMenuOpen;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* header.component.scss */\n\n/* Example: Custom styling for logo hover */\na:hover {\n    text-decoration: underline;\n  }\n  ",
+                    "styleUrl": "./header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- header.component.html -->\n<header class=\"bg-neutral text-primary shadow-md\">\n    <div class=\"container mx-auto px-4 py-14 flex justify-between items-center\">\n      <!-- Logo -->\n      <div class=\"text-2xl font-bold\">\n        <a href=\"/\" class=\"text-accent hover:text-neutral\">\n          MyApp\n        </a>\n      </div>\n  \n      <!-- Navigation Links (Hidden on small screens) -->\n      <nav class=\"hidden md:flex space-x-8 font-semibold\">\n        <a href=\"/\" class=\"hover:text-accent transition-colors\">Home</a>\n        <a href=\"/about\" class=\"hover:text-accent transition-colors\">About</a>\n        <a href=\"/services\" class=\"hover:text-accent transition-colors\">Services</a>\n        <a href=\"/contact\" class=\"hover:text-accent transition-colors\">Contact</a>\n      </nav>\n  \n      <!-- Mobile Menu Button (Visible on small screens) -->\n      <button\n        class=\"block md:hidden text-accent focus:outline-none\"\n        (click)=\"toggleMenu()\"\n      >\n        <svg class=\"w-6 h-6\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\" />\n        </svg>\n      </button>\n    </div>\n  \n    <!-- Mobile Menu (Visible when toggled) -->\n    <div *ngIf=\"isMenuOpen\" class=\"md:hidden bg-primary text-neutral py-4 space-y-4 text-center\">\n      <a href=\"/\" class=\"block hover:text-accent transition-colors\">Home</a>\n      <a href=\"/about\" class=\"block hover:text-accent transition-colors\">About</a>\n      <a href=\"/services\" class=\"block hover:text-accent transition-colors\">Services</a>\n      <a href=\"/contact\" class=\"block hover:text-accent transition-colors\">Contact</a>\n    </div>\n  </header>\n  "
+        },
+        {
+            "name": "LoginComponent",
+            "id": "component-LoginComponent-31f517210c4748cd12473eab8ee821d0ef4873a1cc39316a6eb27c31dbca49afeeec8df7c0a5b014a8b3c3fb6d8559a4e3a89a9bb433e07ec501fa3afa4729f6",
+            "file": "src/app/features/auth/components/login/login.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-login",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./login.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-login',\n  standalone: true,\n  imports: [],\n  templateUrl: './login.component.html',\n  styleUrl: './login.component.css'\n})\nexport class LoginComponent {\n\n}\n",
+            "styleUrl": "./login.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- login.component.html -->\n<div class=\"min-h-screen flex items-center justify-center bg-[#FFFFF]\">\n    <div class=\"bg-white shadow-lg rounded-lg p-8 max-w-md w-full\">\n      <h1 class=\"text-2xl font-bold text-primary mb-6 text-center font-roboto\">Login to Your Account</h1>\n      <form>\n        <!-- Email Input -->\n        <div class=\"mb-4\">\n          <label class=\"block text-secondary font-semibold mb-2\" for=\"email\">Email</label>\n          <input\n            id=\"email\"\n            type=\"email\"\n            placeholder=\"Enter your email\"\n            class=\"w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent\"\n          />\n        </div>\n  \n        <!-- Password Input -->\n        <div class=\"mb-6\">\n          <label class=\"block text-secondary font-semibold mb-2\" for=\"password\">Password</label>\n          <input\n            id=\"password\"\n            type=\"password\"\n            placeholder=\"Enter your password\"\n            class=\"w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent\"\n          />\n        </div>\n  \n        <!-- Login Button -->\n        <div class=\"flex justify-between items-center mb-6\">\n          <button\n            type=\"submit\"\n            class=\"w-full bg-primary text-neutral font-bold py-2 px-4 rounded-lg hover:bg-secondary transition-all\"\n          >\n            Log In\n          </button>\n        </div>\n  \n        <!-- Footer Links -->\n        <div class=\"text-center\">\n          <p class=\"text-sm text-secondary\">\n            Don't have an account?\n            <a href=\"#\" class=\"text-accent font-semibold hover:underline\">Sign up here</a>\n          </p>\n        </div>\n      </form>\n    </div>\n  </div>\n  "
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]\n}"
+            },
+            {
+                "name": "bootstrap",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+            },
+            {
+                "name": "serverConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]\n}"
+                }
+            ],
+            "src/main.server.ts": [
+                {
+                    "name": "bootstrap",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+                }
+            ],
+            "src/app/app.config.server.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+                },
+                {
+                    "name": "serverConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "serverConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/auth/components/login/login.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoginComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/banner-careers/banner-careers.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-library/atoms/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

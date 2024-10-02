@@ -1,4 +1,7 @@
-// src/app/shared/components/banner.component.ts
+/**
+ * BANNER : CAREERS
+ */
+
 import { Component, Input, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 

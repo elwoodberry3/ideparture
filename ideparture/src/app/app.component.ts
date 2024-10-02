@@ -14,7 +14,7 @@ import { BannerComponent } from './shared/components/banner-careers/banner-caree
     BannerComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   showBanner: boolean = true; // Set this flag to true or false based on your requirements
