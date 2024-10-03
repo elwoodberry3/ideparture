@@ -6,7 +6,6 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from '@storybook/test';
 import { ButtonComponent } from './button.component';
 
 const meta: Meta<ButtonComponent> = {
@@ -14,93 +13,89 @@ const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   tags: ['autodocs'],
   argTypes: {
+    styleType: {
+      control: { type: 'select' },
+      options: ['text-only', 'text-icon', 'filled', 'outline'],
+      description: 'Defines the button style (text-only, text-icon, filled, or outline)',
+    },
     text: {
-      control: 'text',
-      description: 'The text displayed on the button',
+      control: { type: 'text' },
+      description: 'Button text',
     },
     icon: {
-      control: 'text',
-      description: 'Optional icon to display alongside the text',
-    },
-    styleType: {
-      control: {
-        type: 'select',
-        options: ['text-only', 'text-icon', 'filled', 'outline'],
-      },
-      description: 'Defines the button style type',
+      control: { type: 'text' },
+      description: 'Optional icon for text-icon button (use valid SVG icon reference)',
     },
     backgroundColor: {
       control: 'color',
-      description: 'Background color of the button',
-      if: { arg: 'styleType', eq: 'filled' }, // Optional: only show for filled style
+      description: 'Optional background color for the button',
     },
-    // Updated to the actual output event name
-    buttonClick: {
-      action: 'clicked',
-      description: 'Event fired when the button is clicked',
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'large'],
+      description: 'Button size (small or large)',
     },
+    buttonClick: { action: 'clicked' },
+  },
+  args: {
+    text: 'Button',
+    styleType: 'text-only',
+    backgroundColor: 'transparent',
   },
 };
 
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-// Text Only Button
+// Text-Only Button Story
 export const TextOnly: Story = {
   args: {
-    text: 'Click Me',
+    text: 'Sign Up Here!',
     styleType: 'text-only',
-    buttonClick: fn(), // You can add the action here if needed
   },
 };
 
-// Text + Icon Button
-export const TextWithIcon: Story = {
+// Text + Icon Button Story
+export const TextIcon: Story = {
   args: {
-    text: 'Settings',
-    icon: '⚙️', // Replace this with an actual icon as needed
+    text: 'Save',
     styleType: 'text-icon',
-    buttonClick: fn(),
+    icon: 'save-icon', // Replace with actual SVG reference
   },
 };
 
-// Text (All Caps), Filled Button
-export const FilledAllCaps: Story = {
+// Filled Button Story
+export const Filled: Story = {
   args: {
-    text: 'SUBMIT',
+    text: 'Submit',
     styleType: 'filled',
-    backgroundColor: '#007bff', // Example color
-    buttonClick: fn(),
+    backgroundColor: '#1B2E40', // Primary color
   },
 };
 
-// Text (Lowercase), Outline Button
-export const LowercaseOutline: Story = {
+// Outline Button Story
+export const Outline: Story = {
   args: {
-    text: 'cancel',
+    text: 'Cancel',
     styleType: 'outline',
-    buttonClick: fn(),
+    backgroundColor: 'transparent',
   },
 };
 
-// Large Button
+// Large Button Story
 export const Large: Story = {
   args: {
-    size: 'large',
     text: 'Large Button',
+    size: 'large',
     styleType: 'filled',
-    backgroundColor: '#007bff', // Example color
-    buttonClick: fn(),
   },
 };
 
-// Small Button
+// Small Button Story
 export const Small: Story = {
   args: {
+    text: 'Small Button',
     size: 'small',
-    text: "Ideparture",
-    styleType: 'outline',
-    buttonClick: fn(),
-    icon: "What"
+    styleType: 'text-only',
   },
 };

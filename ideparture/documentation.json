@@ -181,11 +181,11 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!-- src/app/shared/components/banner.component.html -->\n<div *ngIf=\"showBanner && isVisible\" class=\"bg-[#1B2E40] text-[#FFFFFF] p-4 fixed top-0 left-0 w-full z-50 transition-transform transform duration-300\">\n    <div class=\"container mx-auto flex justify-between items-center\">\n      <p class=\"text-sm\">\n        We are hiring! Join iDeparture and help shape the future of urban mobility\n      </p>\n      <a href=\"#\" class=\"text-[#F5B753] hover:underline text-sm ml-4\">View Our Open Positions</a>\n    </div>\n  </div>\n  "
+            "templateData": "<!-- src/app/shared/components/banner.component.html -->\n<div *ngIf=\"showBanner && isVisible\" class=\"bg-[#1B2E40] text-[#FFFFFF] p-4 fixed top-0 left-0 w-full z-50 transition-transform transform duration-300\">\n    <div class=\"container mx-auto flex justify-between items-center\">\n      <p class=\"text-sm\">\n        We are hiring! Join iDeparture and help shape the future of urban mobility\n      </p>\n      \n      \n      <button class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-8 px-8 rounded\">View Our Open Positions</button>\n      \n    </div>\n  </div>\n  "
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-ca946078e41540fd76a4e6170eb27c9421e7e274029c5a7a9453545aa82edc70a01a8642e33debf3b3648be415f25c4fe5832f1d1e034ad2cb819755f9514284",
+            "id": "component-ButtonComponent-aaf1425cf586eafc225bb68bfab340bbb7719e6f8bbacca867968a2c88c82d640102aa1096f7381c7686752f6f16ee76a99c209dd5e15129a7a4a9fcb50f12b7",
             "file": "src/app/ui-library/atoms/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -193,7 +193,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-button",
-            "styleUrls": [],
+            "styleUrls": [
+                "./button.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./button.component.html"
@@ -262,17 +264,26 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css'\n})\n\nexport class ButtonComponent {\n  @Output() buttonClick = new EventEmitter<void>();\n\n  @Input() text: string = '';\n  @Input() icon: string | null = null; // Optional icon name\n  @Input() styleType: 'text-only' | 'text-icon' | 'filled' | 'outline' = 'text-only';\n  @Input() backgroundColor?: string; // Example declaration\n  @Input() size?: 'small' | 'large'; // Example declaration\n}\n",
-            "styleUrl": "./button.component.css",
+            "sourceCode": "import { Component, EventEmitter, Output, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common'; // Import CommonModule\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule], // Add CommonModule to imports\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css'], // Fix typo from styleUrl to styleUrls\n})\nexport class ButtonComponent {\n  @Output() buttonClick = new EventEmitter<void>();\n  \n  @Input() text: string = '';\n  @Input() icon: string | null = null; // Optional icon name\n  @Input() styleType: 'text-only' | 'text-icon' | 'filled' | 'outline' = 'text-only';\n  @Input() backgroundColor?: string; // Example declaration\n  @Input() size?: 'small' | 'large'; // Example declaration\n}\n\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button.component.css"
+                }
+            ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>button works!</p>\n"
+            "templateData": "<!-- button.component.html -->\n<button\n  class=\"w-full text-sm\"\n  [ngClass]=\"{\n    'text-left text-accent-500 bg-transparent hover:text-accent-300': styleType === 'text-only',\n    'flex items-center justify-center bg-secondary-600 hover:bg-secondary-500 text-white font-bold py-1 px-6 rounded transition-all': styleType === 'filled',\n    'border border-accent-500 hover:bg-accent-500 hover:text-white': styleType === 'outline',\n    'flex items-center': styleType === 'text-icon'\n  }\"\n  (click)=\"buttonClick.emit()\">\n  \n  <ng-container *ngIf=\"icon\">\n    <svg class=\"size-6 text-white\" fill=\"none\" viewBox=\"0 0 26 26\" stroke=\"currentColor\" stroke-width=\"2\">\n      <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\" />\n    </svg>\n  </ng-container>\n\n  <span *ngIf=\"text\">{{ text }}</span>\n</button>\n"
         },
         {
             "name": "FooterComponent",
@@ -423,7 +434,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!-- login.component.html -->\n<div class=\"min-h-screen flex items-center justify-center bg-[#FFFFF]\">\n    <div class=\"bg-white shadow-lg rounded-lg p-8 max-w-md w-full\">\n      <h1 class=\"text-2xl font-bold text-primary mb-6 text-center font-roboto\">Login to Your Account</h1>\n      <form>\n        <!-- Email Input -->\n        <div class=\"mb-4\">\n          <label class=\"block text-secondary font-semibold mb-2\" for=\"email\">Email</label>\n          <input\n            id=\"email\"\n            type=\"email\"\n            placeholder=\"Enter your email\"\n            class=\"w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent\"\n          />\n        </div>\n  \n        <!-- Password Input -->\n        <div class=\"mb-6\">\n          <label class=\"block text-secondary font-semibold mb-2\" for=\"password\">Password</label>\n          <input\n            id=\"password\"\n            type=\"password\"\n            placeholder=\"Enter your password\"\n            class=\"w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent\"\n          />\n        </div>\n  \n        <!-- Login Button -->\n        <div class=\"flex justify-between items-center mb-6\">\n          <button\n            type=\"submit\"\n            class=\"w-full bg-primary text-neutral font-bold py-2 px-4 rounded-lg hover:bg-secondary transition-all\"\n          >\n            Log In\n          </button>\n        </div>\n  \n        <!-- Footer Links -->\n        <div class=\"text-center\">\n          <p class=\"text-sm text-secondary\">\n            Don't have an account?\n            <a href=\"#\" class=\"text-accent font-semibold hover:underline\">Sign up here</a>\n          </p>\n        </div>\n      </form>\n    </div>\n  </div>\n  "
+            "templateData": "<!-- login.component.html -->\n<div class=\"min-h-screen flex items-center justify-center bg-[#FFFFF]\">\n    <div class=\"bg-white shadow-lg rounded-lg p-8 max-w-md w-full\">\n      <h1 class=\"text-2xl font-bold text-primary mb-6 text-center font-roboto\">Login to Your Account</h1>\n\n       text-sm\n      <button class=\"flex items-center justify-center bg-secondary-600 hover:bg-secondary-500 text-white font-bold py-1 px-6 rounded transition-all\">\n        Button\n        </button>\n\n      <svg class=\"size-6 text-gray-500\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" >\n        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\" />\n      </svg>\n\n      <div class=\"max-w-sm mx-auto flex p-6 bg-white rounded-lg shadow-xl\">\n        <div class=\"flex-shrink-0\">\n          <svg class=\"size-6 text-gray-500\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" >\n            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\" />\n          </svg>\n        </div>\n        <div class=\"ml-6 pt-1\">\n          <h4 class=\"text-xl text-gray-900 leading-tight\">ChitChat</h4>\n          <p class=\"text-base text-gray-600 leading-normal\">You have a new message!</p>\n        </div>\n    </div>\n\n\n      <form>\n        <!-- Email Input -->\n        <div class=\"mb-4\">\n          <label class=\"block text-secondary font-semibold mb-2\" for=\"email\">Email</label>\n          <input\n            id=\"email\"\n            type=\"email\"\n            placeholder=\"Enter your email\"\n            class=\"w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent\"\n          />\n        </div>\n  \n        <!-- Password Input -->\n        <div class=\"mb-6\">\n          <label class=\"block text-secondary font-semibold mb-2\" for=\"password\">Password</label>\n          <input\n            id=\"password\"\n            type=\"password\"\n            placeholder=\"Enter your password\"\n            class=\"w-full px-4 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-accent\"\n          />\n        </div>\n  \n        <!-- Login Button -->\n        <div class=\"flex justify-between items-center mb-6\">\n          <button\n            type=\"submit\"\n            class=\"w-full bg-primary text-neutral font-bold py-2 px-4 rounded-lg hover:bg-secondary transition-all\"\n          >\n            Log In\n          </button>\n        </div>\n  \n        <!-- Footer Links -->\n        <div class=\"text-center\">\n          <p class=\"text-sm text-secondary\">\n            Don't have an account?\n            <a href=\"#\" class=\"text-accent font-semibold hover:underline\">Sign up here</a>\n          </p>\n        </div>\n      </form>\n    </div>\n  </div>\n  "
         }
     ],
     "modules": [],
