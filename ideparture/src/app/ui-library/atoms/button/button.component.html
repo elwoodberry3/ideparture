@@ -1,19 +1,10 @@
 <!-- button.component.html -->
-<button
-  class="w-full text-sm"
-  [ngClass]="{
-    'text-left text-accent-500 bg-transparent hover:text-accent-300': styleType === 'text-only',
-    'flex items-center justify-center bg-secondary-600 hover:bg-secondary-500 text-white font-bold py-1 px-6 rounded transition-all': styleType === 'filled',
-    'border border-accent-500 hover:bg-accent-500 hover:text-white': styleType === 'outline',
-    'flex items-center': styleType === 'text-icon'
-  }"
-  (click)="buttonClick.emit()">
-  
-  <ng-container *ngIf="icon">
-    <svg class="size-6 text-white" fill="none" viewBox="0 0 26 26" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  </ng-container>
+<button [ngClass]="buttonClasses" (click)="buttonClick.emit()" [attr.aria-label]="text || 'Button'">
+    <!-- Text (conditionally displayed) -->
+    <span *ngIf="text">{{ text }}</span>
 
-  <span *ngIf="text">{{ text }}</span>
+    <!-- Icon (conditionally displayed) -->
+    <ng-container *ngIf="icon">
+      <ng-icon [name]="icon" class="h-5 w-5 text-accent-500 mr-2"></ng-icon>
+    </ng-container>
 </button>

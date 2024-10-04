@@ -6,22 +6,40 @@
  */
 
 import { Component, EventEmitter, Output, Input } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule], // Add CommonModule to imports
+  imports: [CommonModule, MatIconModule],
+  providers: [], 
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'], // Fix typo from styleUrl to styleUrls
+  styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent {
   @Output() buttonClick = new EventEmitter<void>();
-  
   @Input() text: string = '';
-  @Input() icon: string | null = null; // Optional icon name
+  @Input() icon: string | null = null; // Material Icon name
   @Input() styleType: 'text-only' | 'text-icon' | 'filled' | 'outline' = 'text-only';
-  @Input() backgroundColor?: string; // Example declaration
-  @Input() size?: 'small' | 'large'; // Example declaration
+  @Input() backgroundColor: string | null = null; // Ensure this property exists
+  @Input() size: 'small' | 'medium' | 'large' = 'medium'; // Ensure size exists as well
+
+
+  get buttonClasses(): string {
+    switch (this.styleType) {
+      case 'text-only':
+        return 'w-full text-left text-accent-500 bg-transparent hover:text-accent-300';
+      case 'filled':
+        return 'flex items-center justify-center bg-secondary-600 hover:bg-secondary-500 text-white font-bold py-1 px-6 rounded transition-all';
+      case 'outline':
+        return 'border border-accent-500 hover:bg-accent-500 hover:text-white';
+      case 'text-icon':
+        return 'flex items-center';
+      default:
+        return '';
+    }
+  }
 }
+
 
