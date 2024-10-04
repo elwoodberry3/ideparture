@@ -2,94 +2,195 @@ import { Meta } from '@storybook/addon-docs';
 
 <Meta title="Introduction" />
 
-<div className="p-8 bg-gray-50 min-h-screen">
-
-    <h1 className="text-4xl font-bold text-primary mb-6">Welcome to iDeparture's Storybook</h1>
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/qMpGhWyJXwU?si=pel3iqcXWLr__edv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-    <p className="text-lg text-gray-700 mb-6">Welcome to the **iDeparture App** Storybook documentation. This platform is your guide to understanding and exploring the reusable UI components built for the iDeparture app, designed to help travelers plan their trips with ease.</p>
-
-    <h2 className="text-2xl font-semibold text-secondary mb-4">What is iDeparture?</h2>
-    
-    <p className="text-base text-gray-700 mb-6">The iDeparture app is a feature-rich utility designed to help travelers determine the optimal time to leave for the airport, considering factors like:</p>
-
-  <ul className="list-disc list-inside text-gray-700 mb-6">
-    <li>Travel time to the airport</li>
-    <li>Check-in duration</li>
-    <li>Security screening</li>
-    <li>Boarding time</li>
-    <li>Pre-flight requirements</li>
-  </ul>
-
-  <p className="text-base text-gray-700 mb-6">
-    This application ensures users arrive at the airport in time for their flights and improves their travel experience by minimizing stress.
-  </p>
-
-  <h2 className="text-2xl font-semibold text-secondary mb-4">
-    Key Features
-  </h2>
-
-  <ul className="list-disc list-inside text-gray-700 mb-6">
-    <li>
-      <strong>Atomic Design Principles</strong>: The app’s components follow Atomic Design, ensuring scalability and maintainability.
-    </li>
-    <li>
-      <strong>Reusable Components</strong>: Built with reusable components such as buttons, inputs, forms, and more.
-    </li>
-    <li>
-      <strong>Storybook Integration</strong>: All components are showcased and tested in isolation using Storybook.
-    </li>
-    <li>
-      <strong>Dark Mode and Light Mode UI Support</strong>: Switch between themes seamlessly.
-    </li>
-  </ul>
-
-  <h2 className="text-2xl font-semibold text-secondary mb-4">
-    Storybook Sections
-  </h2>
-
-  <p className="text-base text-gray-700 mb-6">
-    Explore the following sections to learn more about the UI components and design principles used in iDeparture:
-  </p>
-
-  <ul className="list-disc list-inside text-gray-700 mb-6">
-    <li><strong>Atoms</strong>: The basic building blocks of the UI, such as buttons and form inputs.</li>
-    <li><strong>Molecules</strong>: Simple combinations of atoms like input fields with labels.</li>
-    <li><strong>Organisms</strong>: More complex components like navigation bars and forms.</li>
-    <li><strong>Templates & Pages</strong>: Full-page designs that guide the user experience.</li>
-  </ul>
-
-  <h2 className="text-2xl font-semibold text-secondary mb-4">
-    Getting Started
-  </h2>
-
-  <p className="text-base text-gray-700 mb-6">
-    To use these components in your development workflow, follow the instructions in the component stories or refer to the following resources:
-  </p>
-
-  <ul className="list-disc list-inside text-gray-700 mb-6">
-    <li><a href="https://storybook.js.org/" className="text-accent hover:underline">Storybook Documentation</a></li>
-    <li><a href="#" className="text-accent hover:underline">iDeparture Design Guidelines</a></li>
-  </ul>
-
-  <h2 className="text-2xl font-semibold text-secondary mb-4">
-    Navigation
-  </h2>
-
-  <p className="text-base text-gray-700 mb-6">
-    Use the left sidebar to browse different UI components categorized into:
-  </p>
-
-  <ul className="list-disc list-inside text-gray-700 mb-6">
-    <li><strong>Atoms</strong></li>
-    <li><strong>Molecules</strong></li>
-    <li><strong>Organisms</strong></li>
-    <li><strong>Templates</strong></li>
-  </ul>
-
-  <p className="text-base text-gray-700 mb-6">
-    Happy exploring!
-  </p>
-
+<div class="sb-container">
+    <h1>iDeparture Design System v.3.0.1</h1>
+    <div id="billboard"></div>
+    <p>Experience seamless travel planning with **iDeparture**! Our innovative app calculates the perfect departure time, ensuring you arrive at the airport stress-free. With real-time traffic updates, personalized notifications, and user-friendly design, iDeparture takes the hassle out of travel. Download now and travel smarter!</p>
+    <div class="sb-section">
+        <div class="sb-section-item">
+            <img src="path/to/image.jpg" alt="A wall of logos representing different styling technologies" />
+            <h4 class="sb-section-item-heading">Documentation</h4>
+            <p class="sb-section-item-paragraph">There are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
+            <a href="#" target="_blank">Learn more</a>
+        </div>
+        <div class="sb-section-item">
+            <img src="path/to/image.jpg" alt="An abstraction representing the composition of data for a component" />
+            <h4 class="sb-section-item-heading">Github</h4>
+            <p class="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context.</p>
+            <a href="#" target="_blank">Learn more</a>
+        </div>
+        <div class="sb-section-item">
+            <img src="path/to/image.jpg" alt="A representation of typography and image assets" />
+            <h4 class="sb-section-item-heading">Figma</h4>
+            <p class="sb-section-item-paragraph">To link static files to your projects and stories, use the `staticDirs` configuration option.</p>
+            <a href="#" target="_blank">Learn more</a>
+        </div>
+    </div>
 </div>
+
+<style>
+{`
+
+#billboard {
+    background-color: transparent;
+    display: block;
+    height: 330px;
+    background-image: url(https://codedesign.org/storage/app/media/uploaded-files/amazon-fba-logo-feature.jpg);
+    opacity: .5;
+}
+
+.sb-container {
+    margin-bottom: 48px;
+}
+
+.sb-section {
+width: 100%;
+display: flex;
+flex-direction: row;
+gap: 20px;
+}
+
+img {
+object-fit: cover;
+}
+
+.sb-section-title {
+margin-bottom: 32px;
+}
+
+.sb-section a:not(h1 a, h2 a, h3 a) {
+font-size: 14px;
+}
+
+.sb-section-item, .sb-grid-item {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+.sb-section-item-heading {
+padding-top: 20px !important;
+padding-bottom: 5px !important;
+margin: 0 !important;
+}
+.sb-section-item-paragraph {
+margin: 0;
+padding-bottom: 10px;
+}
+
+.sb-chevron {
+margin-left: 5px;
+}
+
+.sb-features-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 32px 20px;
+}
+
+.sb-socials {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+}
+
+.sb-socials p {
+margin-bottom: 10px;
+}
+
+.sb-explore-image {
+max-height: 32px;
+align-self: flex-start;
+}
+
+.sb-addon {
+width: 100%;
+display: flex;
+align-items: center;
+position: relative;
+background-color: #EEF3F8;
+border-radius: 5px;
+border: 1px solid rgba(0, 0, 0, 0.05);
+background: #EEF3F8;
+height: 180px;
+margin-bottom: 48px;
+overflow: hidden;
+}
+
+.sb-addon-text {
+padding-left: 48px;
+max-width: 240px;
+}
+
+.sb-addon-text h4 {
+padding-top: 0px;
+}
+
+.sb-addon-img {
+position: absolute;
+left: 345px;
+top: 0;
+height: 100%;
+width: 200%;
+overflow: hidden;
+}
+
+.sb-addon-img img {
+width: 650px;
+transform: rotate(-15deg);
+margin-left: 40px;
+margin-top: -72px;
+box-shadow: 0 0 1px rgba(255, 255, 255, 0);
+backface-visibility: hidden;
+}
+
+@media screen and (max-width: 800px) {
+    .sb-addon-img {
+        left: 300px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sb-section {
+        flex-direction: column;
+    }
+
+    .sb-features-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sb-socials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sb-addon {
+        height: 280px;
+        align-items: flex-start;
+        padding-top: 32px;
+        overflow: hidden;
+    }
+
+    .sb-addon-text {
+        padding-left: 24px;
+    }
+
+    .sb-addon-img {
+        right: 0;
+        left: 0;
+        top: 130px;
+        bottom: 0;
+        overflow: hidden;
+        height: auto;
+        width: 124%;
+    }
+
+    .sb-addon-img img {
+        width: 1200px;
+        transform: rotate(-12deg);
+        margin-left: 0;
+        margin-top: 48px;
+        margin-bottom: -40px;
+        margin-left: -24px;
+    }
+}
+`}
+</style>

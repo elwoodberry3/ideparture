@@ -1,10 +1,4 @@
-/**
- * BUTTON
- * An Atom.
- * 
- * iDeparture Design System v.3.0.1
- */
-
+/** BUTTON [STORY] iDeparture Design System v.3.0.1 */
 import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
@@ -15,16 +9,12 @@ const meta: Meta<ButtonComponent> = {
   argTypes: {
     styleType: {
       control: { type: 'select' },
-      options: ['text-only', 'text-icon', 'filled', 'outline'],
-      description: 'Defines the button style (text-only, text-icon, filled, or outline)',
+      options: ['text-only', 'text-icon', 'filled', 'outline', 'button-icon'],
+      description: 'Defines the button style (text-only, text-icon, filled, outline, or button-icon)',
     },
     text: {
       control: { type: 'text' },
       description: 'Button text',
-    },
-    icon: {
-      control: { type: 'text' },
-      description: 'Optional icon for text-icon button (use valid SVG icon reference)',
     },
     backgroundColor: {
       control: 'color',
@@ -32,8 +22,8 @@ const meta: Meta<ButtonComponent> = {
     },
     size: {
       control: { type: 'select' },
-      options: ['small', 'large'],
-      description: 'Button size (small or large)',
+      options: ['small', 'medium', 'large'],
+      description: 'Button size (small, medium, or large)',
     },
     buttonClick: { action: 'clicked' },
   },
@@ -60,7 +50,6 @@ export const TextIcon: Story = {
   args: {
     text: 'Save',
     styleType: 'text-icon',
-    icon: 'save-icon', // Replace with actual SVG reference
   },
 };
 
@@ -73,12 +62,20 @@ export const Filled: Story = {
   },
 };
 
-// Outline Button Story
+// Outlined Button Story
 export const Outline: Story = {
   args: {
     text: 'Cancel',
     styleType: 'outline',
     backgroundColor: 'transparent',
+  },
+};
+
+// Button + Icon Story
+export const ButtonIcon: Story = {
+  args: {
+    text: 'Next',
+    styleType: 'button-icon',
   },
 };
 
