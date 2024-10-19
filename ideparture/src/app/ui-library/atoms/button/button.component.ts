@@ -22,7 +22,7 @@ export class ButtonComponent {
       case 'text-only':
         return 'w-full text-left text-accent-500 bg-transparent hover:text-accent-300';
       case 'filled':
-        return 'flex items-center justify-center bg-secondary-600 hover:bg-secondary-500 text-white font-bold py-1 px-6 rounded transition-all';
+        return 'w-full flex items-center justify-center bg-secondary-600 hover:bg-secondary-500 text-white font-bold py-3 px-6 rounded transition-all';
       case 'outline':
         return 'border border-secondary-600 flex items-center justify-center hover:bg-secondary-500 text-secondary-600 font-medium py-1 px-6 rounded transition-all';
       case 'text-icon':
